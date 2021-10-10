@@ -3,10 +3,10 @@ WD="$(
     cd "$(dirname "$0")"
     pwd -P
 )"
-$WD/down.sh
+${WD}/down.sh
 docker run -d --name openvpn-client \
     -v /etc/localtime:/etc/localtime:ro \
-    -v $WD:/vpn \
+    -v ${WD}:/vpn \
     --restart unless-stopped \
     --cap-add=NET_ADMIN \
     --device /dev/net/tun \
